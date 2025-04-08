@@ -58,56 +58,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
       security:
       - oauth_2_0: []
-  /albums:
-    get:
-      operationId: get-multiple-albums
-      tags:
-      - Albums
-      summary: |
-        Get Several Albums
-      description: |
-        Get Spotify catalog information for multiple albums identified by their Spotify IDs.
-      parameters:
-      - $ref: '#/components/parameters/QueryAlbumIds'
-      - $ref: '#/components/parameters/QueryMarket'
-      responses:
-        "200":
-          $ref: '#/components/responses/ManyAlbums'
-        "401":
-          $ref: '#/components/responses/Unauthorized'
-        "403":
-          $ref: '#/components/responses/Forbidden'
-        "429":
-          $ref: '#/components/responses/TooManyRequests'
-      security:
-      - oauth_2_0: []
-  /albums/{id}/tracks:
-    get:
-      operationId: get-an-albums-tracks
-      tags:
-      - Albums
-      - Tracks
-      summary: |
-        Get Album Tracks
-      description: |
-        Get Spotify catalog information about an album’s tracks.
-        Optional parameters can be used to limit the number of tracks returned.
-      parameters:
-      - $ref: '#/components/parameters/PathAlbumId'
-      - $ref: '#/components/parameters/QueryMarket'
-      - $ref: '#/components/parameters/QueryLimit'
-      - $ref: '#/components/parameters/QueryOffset'
-      responses:
-        "200":
-          $ref: '#/components/responses/PagingSimplifiedTrackObject'
-        "401":
-          $ref: '#/components/responses/Unauthorized'
-        "403":
-          $ref: '#/components/responses/Forbidden'
-        "429":
-          $ref: '#/components/responses/TooManyRequests'
-      security:
-      - oauth_2_0: []
+
   /artists/{id}:
     get:
       tags:
